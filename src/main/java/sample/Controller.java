@@ -10,6 +10,7 @@ import java.io.IOException;
 public class Controller {
 
     public TextField entityName;
+    public TextField packageName;
 
     private EntityGenerator entityGenerator;
 
@@ -18,7 +19,7 @@ public class Controller {
     }
 
     public void generate() {
-        entityGenerator.generate(entityName.getText());
+        entityGenerator.generate(entityName.getText(), packageName.getText());
     }
 
     public void showGeneratedFiles() {
