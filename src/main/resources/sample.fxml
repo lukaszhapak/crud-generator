@@ -41,6 +41,8 @@
         </Pane>
     </ScrollPane>
 
+    <Button layoutX="1000.0" layoutY="650.0" mnemonicParsing="false" text="Show Files"
+            onMouseClicked="#showGeneratedFiles"/>
     <Button layoutX="1100.0" layoutY="650.0" mnemonicParsing="false" text="Generate" onMouseClicked="#generate"/>
 
 </Pane>
