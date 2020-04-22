@@ -1,0 +1,36 @@
+package $packageName;
+
+import $packageName.entity.$entityName;
+import $packageName.repository.$entityNameRepository;
+import org.springframework.stereotype.Service;
+import lombok.RequiredArgsConstructor;
+
+import java.util.List;
+
+@RequiredArgsConstructor
+@Service
+public class $entityNameService {
+
+    private final $entityNameRepository $entityNameLowerCaseRepository;
+
+
+    public List<$entityName> findAll() {
+        return $entityNameLowerCaseRepository.findAll();
+    }
+
+    public void save($entityName $entityNameLowerCase) {
+        $entityNameLowerCaseRepository.save($entityNameLowerCase);
+    }
+
+    public void update($entityName $entityNameLowerCase) {
+        $entityNameLowerCaseRepository.save($entityNameLowerCase);
+    }
+
+    public $entityName findById(String id) {
+        return $entityNameLowerCaseRepository.findById(Long.parseLong(id)).orElse(null);
+    }
+
+    public void deleteById(String id) {
+        $entityNameLowerCaseRepository.deleteById(Long.parseLong(id));
+    }
+}

@@ -7,6 +7,7 @@ import sample.entity.EntityData;
 import sample.entity.Field;
 import sample.generator.entity.EntityGenerator;
 import sample.generator.repository.RepositoryGenerator;
+import sample.generator.service.ServiceGenerator;
 
 import java.awt.*;
 import java.io.File;
@@ -43,11 +44,15 @@ public class Controller {
 
     private EntityGenerator entityGenerator;
     private RepositoryGenerator repositoryGenerator;
+    private ServiceGenerator serviceGenerator;
+
     private HashMap<ChoiceBox<String>, TextField> fieldsInput;
 
     public void initialize() {
         entityGenerator = new EntityGenerator();
         repositoryGenerator = new RepositoryGenerator();
+        serviceGenerator = new ServiceGenerator();
+
         fieldsInput = new HashMap<>();
         fieldsInput.put(fieldType1, fieldName1);
         fieldsInput.put(fieldType2, fieldName2);
@@ -78,6 +83,7 @@ public class Controller {
 
         entityGenerator.generate(entityData);
         repositoryGenerator.generate(entityData);
+        serviceGenerator.generate(entityData);
     }
 
     public void showGeneratedFiles() {
