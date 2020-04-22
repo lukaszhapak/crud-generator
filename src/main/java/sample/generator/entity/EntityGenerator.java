@@ -20,6 +20,11 @@ public class EntityGenerator {
         data = data.replace("$packageName", entityData.getPackageName());
         data = data.replace("$entityName", entityName);
 
+        String id = "@Id\n";
+        id += "    @GeneratedValue(strategy = GenerationType.IDENTITY)\n";
+        id += "    private " + entityData.getId().getType() + " " + entityData.getId().getName();
+        data = data.replace("$id", id);
+
         fileOperationHelper.saveDataInFile(fileName, data);
     }
 }
