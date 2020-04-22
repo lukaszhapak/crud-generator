@@ -1,6 +1,7 @@
 package sample;
 
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import sample.entity.EntityData;
 import sample.entity.Field;
@@ -9,17 +10,52 @@ import sample.generator.entity.EntityGenerator;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class Controller {
 
     public TextField entityName;
     public TextField packageName;
     public CheckBox idCheckBox;
+    public ChoiceBox<String> fieldType1;
+    public ChoiceBox<String> fieldType2;
+    public ChoiceBox<String> fieldType3;
+    public ChoiceBox<String> fieldType4;
+    public ChoiceBox<String> fieldType5;
+    public ChoiceBox<String> fieldType6;
+    public ChoiceBox<String> fieldType7;
+    public ChoiceBox<String> fieldType8;
+    public ChoiceBox<String> fieldType9;
+    public ChoiceBox<String> fieldType10;
+    public TextField fieldName1;
+    public TextField fieldName2;
+    public TextField fieldName3;
+    public TextField fieldName4;
+    public TextField fieldName5;
+    public TextField fieldName6;
+    public TextField fieldName7;
+    public TextField fieldName8;
+    public TextField fieldName9;
+    public TextField fieldName10;
 
     private EntityGenerator entityGenerator;
+    private HashMap<ChoiceBox<String>, TextField> fieldsInput;
 
     public void initialize() {
         entityGenerator = new EntityGenerator();
+        fieldsInput = new HashMap<>();
+        fieldsInput.put(fieldType1, fieldName1);
+        fieldsInput.put(fieldType2, fieldName2);
+        fieldsInput.put(fieldType3, fieldName3);
+        fieldsInput.put(fieldType4, fieldName4);
+        fieldsInput.put(fieldType5, fieldName5);
+        fieldsInput.put(fieldType6, fieldName6);
+        fieldsInput.put(fieldType7, fieldName7);
+        fieldsInput.put(fieldType8, fieldName8);
+        fieldsInput.put(fieldType9, fieldName9);
+        fieldsInput.put(fieldType10, fieldName10);
     }
 
     public void generate() {
@@ -30,6 +66,14 @@ public class Controller {
         if (idCheckBox.isSelected()) {
             entityData.setId(new Field("Long", "Id"));
         }
+
+        List<Field> fields = new ArrayList<>();
+        fieldsInput.forEach((k, v) -> {
+            if (k.getValue() != null) {
+                fields.add(new Field(k.getValue(), v.getText()));
+            }
+        });
+        entityData.setFields(fields);
 
         entityGenerator.generate(entityData);
     }

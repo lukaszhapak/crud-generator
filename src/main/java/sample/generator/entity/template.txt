@@ -11,6 +11,6 @@ import lombok.Data;
 @Data
 public class $entityName {
 
-    $id
-    $fields
+$id
+$fields
 }

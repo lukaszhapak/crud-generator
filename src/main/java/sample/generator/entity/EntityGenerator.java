@@ -1,6 +1,7 @@
 package sample.generator.entity;
 
 import sample.entity.EntityData;
+import sample.entity.Field;
 import sample.file.FileOperationHelper;
 
 public class EntityGenerator {
@@ -20,10 +21,18 @@ public class EntityGenerator {
         data = data.replace("$packageName", entityData.getPackageName());
         data = data.replace("$entityName", entityName);
 
-        String id = "@Id\n";
+        String id = "    @Id\n";
         id += "    @GeneratedValue(strategy = GenerationType.IDENTITY)\n";
         id += "    private " + entityData.getId().getType() + " " + entityData.getId().getName();
         data = data.replace("$id", id);
+
+        StringBuilder fields = new StringBuilder();
+
+        for (Field field : entityData.getFields()) {
+            fields.append("    private ").append(field.getType()).append(" ").append(field.getName()).append(";\n");
+        }
+
+        data = data.replace("$fields", fields);
 
         fileOperationHelper.saveDataInFile(fileName, data);
     }
