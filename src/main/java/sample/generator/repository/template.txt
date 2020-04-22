@@ -1,0 +1,8 @@
+package $packageName;
+
+import $packageName.entity.$entityName;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface $entityNameRepository extends JpaRepository<$entityName, $idType> {
+
+}
