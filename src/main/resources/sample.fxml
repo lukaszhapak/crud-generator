@@ -14,9 +14,7 @@
 
     <ScrollPane layoutX="50.0" layoutY="100.0" prefHeight="200.0" prefWidth="1100.0">
         <Pane prefHeight="600.0" prefWidth="1080.0">
-            <CheckBox layoutX="20.0" layoutY="10.0" mnemonicParsing="false" text="Id"/>
-            <ChoiceBox layoutX="70.0" layoutY="5.0" prefWidth="100.0"/>
-            <TextField layoutX="200.0" layoutY="5.0" promptText="name"/>
+            <CheckBox layoutX="20.0" layoutY="10.0" mnemonicParsing="false" text="Id" fx:id="idCheckBox"/>
 
             <ChoiceBox layoutX="20.0" layoutY="50.0" prefWidth="100.0"/>
             <TextField layoutX="150.0" layoutY="50.0" promptText="name"/>
