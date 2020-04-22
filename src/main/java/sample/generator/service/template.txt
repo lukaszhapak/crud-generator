@@ -11,26 +11,26 @@ import java.util.List;
 @Service
 public class $entityNameService {
 
-    private final $entityNameRepository $entityNameLowerCaseRepository;
+    private final $entityNameRepository $entityLowerCaseRepository;
 
 
     public List<$entityName> findAll() {
-        return $entityNameLowerCaseRepository.findAll();
+        return $entityLowerCaseRepository.findAll();
     }
 
-    public void save($entityName $entityNameLowerCase) {
-        $entityNameLowerCaseRepository.save($entityNameLowerCase);
+    public void save($entityName $entityLowerCase) {
+        $entityLowerCaseRepository.save($entityLowerCase);
     }
 
-    public void update($entityName $entityNameLowerCase) {
-        $entityNameLowerCaseRepository.save($entityNameLowerCase);
+    public void update($entityName $entityLowerCase) {
+        $entityLowerCaseRepository.save($entityLowerCase);
     }
 
     public $entityName findById(String id) {
-        return $entityNameLowerCaseRepository.findById(Long.parseLong(id)).orElse(null);
+        return $entityLowerCaseRepository.findById(Long.parseLong(id)).orElse(null);
     }
 
     public void deleteById(String id) {
-        $entityNameLowerCaseRepository.deleteById(Long.parseLong(id));
+        $entityLowerCaseRepository.deleteById(Long.parseLong(id));
     }
 }

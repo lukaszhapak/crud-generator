@@ -21,7 +21,7 @@ public class ServiceGenerator {
         data = data.replace("$packageName", entityData.getPackageName());
         data = data.replace("$entityName", entityName);
 
-        data = data.replace("$entityNameLowerCase", entityName.toLowerCase());
+        data = data.replace("$entityLowerCase", entityName.toLowerCase());
 
         fileOperationHelper.saveDataInFile(fileName, data);
     }
