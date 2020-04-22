@@ -66,9 +66,7 @@ public class Controller {
         entityData.setPackageName(packageName.getText());
         entityData.setEntityName(entityName.getText());
 
-        if (idCheckBox.isSelected()) {
-            entityData.setId(new Field("Long", "Id"));
-        }
+        entityData.setId(new Field("Long", "Id"));
 
         List<Field> fields = new ArrayList<>();
         fieldsInput.forEach((k, v) -> {
