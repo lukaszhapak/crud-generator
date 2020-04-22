@@ -42,6 +42,11 @@ public class Controller {
     public TextField fieldName9;
     public TextField fieldName10;
     public CheckBox repositoryCheckBox;
+    public CheckBox serviceCheckBox;
+    public CheckBox controllerCheckBox;
+    public CheckBox jspCheckBox;
+    public CheckBox thymeleafCheckBox;
+    public CheckBox restCheckBox;
 
     private EntityGenerator entityGenerator;
     private RepositoryGenerator repositoryGenerator;
