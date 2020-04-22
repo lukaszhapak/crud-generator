@@ -7,4 +7,5 @@ public class EntityData {
 
     private String packageName;
     private String entityName;
+    private Field id;
 }
