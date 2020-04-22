@@ -1,6 +1,7 @@
 package sample;
 
 import javafx.scene.control.TextField;
+import sample.entity.EntityData;
 import sample.generator.entity.EntityGenerator;
 
 import java.awt.*;
@@ -19,7 +20,10 @@ public class Controller {
     }
 
     public void generate() {
-        entityGenerator.generate(entityName.getText(), packageName.getText());
+        EntityData entityData = new EntityData();
+        entityData.setPackageName(packageName.getText());
+        entityData.setEntityName(entityName.getText());
+        entityGenerator.generate(entityData);
     }
 
     public void showGeneratedFiles() {
