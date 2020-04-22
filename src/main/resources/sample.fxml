@@ -8,17 +8,17 @@
       xmlns="http://javafx.com/javafx/10.0.2-internal" fx:controller="sample.Controller">
 
     <Label layoutX="50.0" layoutY="50.0" text="Entity:"/>
-    <TextField layoutX="100.0" layoutY="45.0" promptText="name" fx:id="entityName"/>
-    <CheckBox layoutX="300.0" layoutY="50.0" mnemonicParsing="false" text="Lombok"/>
+    <TextField fx:id="entityName" layoutX="100.0" layoutY="45.0" promptText="name"/>
+    <CheckBox layoutX="850.0" layoutY="50.0" mnemonicParsing="false" text="Lombok"/>
 
     <Label layoutX="950.0" layoutY="50.0" text="Package:"/>
-    <TextField layoutX="1000.0" layoutY="45.0" promptText="com.example.app" fx:id="packageName"/>
+    <TextField fx:id="packageName" layoutX="1000.0" layoutY="45.0" promptText="com.example.app"/>
 
     <ScrollPane layoutX="50.0" layoutY="100.0" prefHeight="200.0" prefWidth="1100.0">
-        <Pane prefHeight="600.0" prefWidth="1080.0">
-            <CheckBox layoutX="20.0" layoutY="10.0" mnemonicParsing="false" text="Id" fx:id="idCheckBox"/>
+        <Pane prefHeight="600.0" prefWidth="1084.0">
+            <CheckBox fx:id="idCheckBox" layoutX="20.0" layoutY="10.0" mnemonicParsing="false" text="Id"/>
 
-            <ChoiceBox layoutX="20.0" layoutY="50.0" prefWidth="100.0" fx:id="fieldType1">
+            <ChoiceBox fx:id="fieldType1" layoutX="20.0" layoutY="50.0" prefWidth="100.0">
                 <items>
                     <FXCollections fx:factory="observableArrayList">
                         <String fx:value="String"/>
@@ -27,8 +27,8 @@
                     </FXCollections>
                 </items>
             </ChoiceBox>
-            <TextField layoutX="150.0" layoutY="50.0" promptText="name" fx:id="fieldName1"/>
-            <ChoiceBox layoutX="20.0" layoutY="80.0" prefWidth="100.0" fx:id="fieldType2">
+            <TextField fx:id="fieldName1" layoutX="150.0" layoutY="50.0" promptText="name"/>
+            <ChoiceBox fx:id="fieldType2" layoutX="20.0" layoutY="80.0" prefWidth="100.0">
                 <items>
                     <FXCollections fx:factory="observableArrayList">
                         <String fx:value="String"/>
@@ -37,8 +37,8 @@
                     </FXCollections>
                 </items>
             </ChoiceBox>
-            <TextField layoutX="150.0" layoutY="80.0" promptText="name" fx:id="fieldName2"/>
-            <ChoiceBox layoutX="20.0" layoutY="110.0" prefWidth="100.0" fx:id="fieldType3">
+            <TextField fx:id="fieldName2" layoutX="150.0" layoutY="80.0" promptText="name"/>
+            <ChoiceBox fx:id="fieldType3" layoutX="20.0" layoutY="110.0" prefWidth="100.0">
                 <items>
                     <FXCollections fx:factory="observableArrayList">
                         <String fx:value="String"/>
@@ -47,8 +47,8 @@
                     </FXCollections>
                 </items>
             </ChoiceBox>
-            <TextField layoutX="150.0" layoutY="110.0" promptText="name" fx:id="fieldName3"/>
-            <ChoiceBox layoutX="20.0" layoutY="140.0" prefWidth="100.0" fx:id="fieldType4">
+            <TextField fx:id="fieldName3" layoutX="150.0" layoutY="110.0" promptText="name"/>
+            <ChoiceBox fx:id="fieldType4" layoutX="20.0" layoutY="140.0" prefWidth="100.0">
                 <items>
                     <FXCollections fx:factory="observableArrayList">
                         <String fx:value="String"/>
@@ -57,8 +57,8 @@
                     </FXCollections>
                 </items>
             </ChoiceBox>
-            <TextField layoutX="150.0" layoutY="140.0" promptText="name" fx:id="fieldName4"/>
-            <ChoiceBox layoutX="20.0" layoutY="170.0" prefWidth="100.0" fx:id="fieldType5">
+            <TextField fx:id="fieldName4" layoutX="150.0" layoutY="140.0" promptText="name"/>
+            <ChoiceBox fx:id="fieldType5" layoutX="20.0" layoutY="170.0" prefWidth="100.0">
                 <items>
                     <FXCollections fx:factory="observableArrayList">
                         <String fx:value="String"/>
@@ -67,8 +67,8 @@
                     </FXCollections>
                 </items>
             </ChoiceBox>
-            <TextField layoutX="150.0" layoutY="170.0" promptText="name" fx:id="fieldName5"/>
-            <ChoiceBox layoutX="20.0" layoutY="200.0" prefWidth="100.0" fx:id="fieldType6">
+            <TextField fx:id="fieldName5" layoutX="150.0" layoutY="170.0" promptText="name"/>
+            <ChoiceBox fx:id="fieldType6" layoutX="20.0" layoutY="200.0" prefWidth="100.0">
                 <items>
                     <FXCollections fx:factory="observableArrayList">
                         <String fx:value="String"/>
@@ -77,8 +77,8 @@
                     </FXCollections>
                 </items>
             </ChoiceBox>
-            <TextField layoutX="150.0" layoutY="200.0" promptText="name" fx:id="fieldName6"/>
-            <ChoiceBox layoutX="20.0" layoutY="230.0" prefWidth="100.0" fx:id="fieldType7">
+            <TextField fx:id="fieldName6" layoutX="150.0" layoutY="200.0" promptText="name"/>
+            <ChoiceBox fx:id="fieldType7" layoutX="20.0" layoutY="230.0" prefWidth="100.0">
                 <items>
                     <FXCollections fx:factory="observableArrayList">
                         <String fx:value="String"/>
@@ -87,8 +87,8 @@
                     </FXCollections>
                 </items>
             </ChoiceBox>
-            <TextField layoutX="150.0" layoutY="230.0" promptText="name" fx:id="fieldName7"/>
-            <ChoiceBox layoutX="20.0" layoutY="260.0" prefWidth="100.0" fx:id="fieldType8">
+            <TextField fx:id="fieldName7" layoutX="150.0" layoutY="230.0" promptText="name"/>
+            <ChoiceBox fx:id="fieldType8" layoutX="20.0" layoutY="260.0" prefWidth="100.0">
                 <items>
                     <FXCollections fx:factory="observableArrayList">
                         <String fx:value="String"/>
@@ -97,8 +97,8 @@
                     </FXCollections>
                 </items>
             </ChoiceBox>
-            <TextField layoutX="150.0" layoutY="260.0" promptText="name" fx:id="fieldName8"/>
-            <ChoiceBox layoutX="20.0" layoutY="290.0" prefWidth="100.0" fx:id="fieldType9">
+            <TextField fx:id="fieldName8" layoutX="150.0" layoutY="260.0" promptText="name"/>
+            <ChoiceBox fx:id="fieldType9" layoutX="20.0" layoutY="290.0" prefWidth="100.0">
                 <items>
                     <FXCollections fx:factory="observableArrayList">
                         <String fx:value="String"/>
@@ -107,8 +107,8 @@
                     </FXCollections>
                 </items>
             </ChoiceBox>
-            <TextField layoutX="150.0" layoutY="290.0" promptText="name" fx:id="fieldName9"/>
-            <ChoiceBox layoutX="20.0" layoutY="320.0" prefWidth="100.0" fx:id="fieldType10">
+            <TextField fx:id="fieldName9" layoutX="150.0" layoutY="290.0" promptText="name"/>
+            <ChoiceBox fx:id="fieldType10" layoutX="20.0" layoutY="320.0" prefWidth="100.0">
                 <items>
                     <FXCollections fx:factory="observableArrayList">
                         <String fx:value="String"/>
@@ -117,12 +117,14 @@
                     </FXCollections>
                 </items>
             </ChoiceBox>
-            <TextField layoutX="150.0" layoutY="320.0" promptText="name" fx:id="fieldName10"/>
+            <TextField fx:id="fieldName10" layoutX="150.0" layoutY="320.0" promptText="name"/>
         </Pane>
     </ScrollPane>
 
-    <Button layoutX="1000.0" layoutY="650.0" mnemonicParsing="false" text="Show Files"
-            onMouseClicked="#showGeneratedFiles"/>
-    <Button layoutX="1100.0" layoutY="650.0" mnemonicParsing="false" text="Generate" onMouseClicked="#generate"/>
+    <CheckBox fx:id="repositoryCheckBox" layoutX="50.0" layoutY="350.0" mnemonicParsing="false" text="Repository"/>
+
+    <Button layoutX="1000.0" layoutY="650.0" mnemonicParsing="false" onMouseClicked="#showGeneratedFiles"
+            text="Show Files"/>
+    <Button layoutX="1100.0" layoutY="650.0" mnemonicParsing="false" onMouseClicked="#generate" text="Generate"/>
 
 </Pane>

@@ -41,6 +41,7 @@ public class Controller {
     public TextField fieldName8;
     public TextField fieldName9;
     public TextField fieldName10;
+    public CheckBox repositoryCheckBox;
 
     private EntityGenerator entityGenerator;
     private RepositoryGenerator repositoryGenerator;
