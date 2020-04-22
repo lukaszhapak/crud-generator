@@ -1,4 +1,4 @@
-package $packageName
+package $packageName;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
