@@ -45,9 +45,7 @@ public class Controller {
     public CheckBox repositoryCheckBox;
     public CheckBox serviceCheckBox;
     public CheckBox controllerCheckBox;
-    public CheckBox jspCheckBox;
-    public CheckBox thymeleafCheckBox;
-    public CheckBox restCheckBox;
+    public ChoiceBox<String> controllerType;
 
     private EntityGenerator entityGenerator;
     private RepositoryGenerator repositoryGenerator;
@@ -94,6 +92,7 @@ public class Controller {
         repositoryGenerator.generate(entityData);
         serviceGenerator.generate(entityData);
         controllerGenerator.generate(entityData);
+        System.out.println();
     }
 
     public void showGeneratedFiles() {
