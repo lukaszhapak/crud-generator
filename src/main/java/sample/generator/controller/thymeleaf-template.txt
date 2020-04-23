@@ -1,0 +1,62 @@
+package $package.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import $package.entity.$Entity;
+import $package.service.$EntityService;
+import lombok.RequiredArgsConstructor;
+
+@Controller
+@RequestMapping("/$entity")
+@RequiredArgsConstructor
+public class $EntityController {
+
+	private final $EntityService $entityService;
+
+	@GetMapping
+	public String list(Model model) {
+		model.addAttribute("list", $entityService.findAll());
+		return "/$entity/list";
+	}
+
+	@GetMapping("/{id}")
+	public String $entity(Model model, @PathVariable int id) {
+		model.addAttribute("$entity", $entityService.findById(id));
+		return "/$entity/$entity";
+	}
+
+	@GetMapping("/add")
+	public String addForm(Model model) {
+		model.addAttribute("$entity", new $Entity());
+		return "/$entity/add";
+	}
+
+	@PostMapping("/add")
+	public String add($Entity $entity) {
+		$entityService.save($entity);
+		return "redirect:/$entity";
+	}
+
+	@GetMapping("/{id}/update")
+	public String updateForm(Model model, @PathVariable int id) {
+		model.addAttribute("$entity", $entityService.findById(id));
+		return "/$entity/update";
+	}
+
+	@PostMapping("/{id}/update")
+	public String update($Entity $entity) {
+		$entityService.save($entity);
+		return "redirect:/$entity/" + $entity.getId();
+	}
+
+	@GetMapping("/{id}/delete")
+	public String delete(@PathVariable int id) {
+		$entityService.deleteById(id);
+		return "redirect:/$entity";
+	}
+}
