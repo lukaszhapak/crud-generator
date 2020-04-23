@@ -31,7 +31,7 @@ public class $EntityController {
 
     @PutMapping
     public void update(@RequestBody $Entity $entity) {
-        $entityService.update($entity);
+        $entityService.save($entity);
     }
 
     @DeleteMapping("/{id}")

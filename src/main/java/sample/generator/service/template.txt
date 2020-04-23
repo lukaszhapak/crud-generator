@@ -26,10 +26,6 @@ public class $EntityService {
         $entityRepository.save($entity);
     }
 
-    public void update($Entity $entity) {
-        $entityRepository.save($entity);
-    }
-
     public void deleteById(long id) {
         $entityRepository.deleteById(id);
     }
