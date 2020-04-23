@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <th:block th:include="fragments/$entity :: header"></th:block>
+</head>
+<body>
+
+<nav th:replace="fragments/$entity :: navbar"></nav>
+
+<br><br>
+
+<div class="container">
+    <table class="table table-striped">
+        <tr class="thead-dark">
+$tableHeaders
+            <th>Action</th>
+        </tr>
+        <tr th:each="$entity : ${list}">
+$tableData
+            <td>
+            	<a class="btn btn-primary" th:href="@{|/$entity/${$entity.id}|}">Info</a>
+            	<a class="btn btn-danger" th:href="@{|/$entity/${$entity.id}/delete|}">Delete</a>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<br><br>
+
+<div th:replace="fragments/$entity :: scripts"></div>
+
+</body>
+</html>
