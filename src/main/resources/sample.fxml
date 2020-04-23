@@ -125,10 +125,10 @@
 
     <CheckBox fx:id="serviceCheckBox" layoutX="50.0" layoutY="400.0" mnemonicParsing="false" text="Service"/>
 
-    <CheckBox fx:id="controllerCheckBox" layoutX="50.0" layoutY="450.0" mnemonicParsing="false" text="Controller"/>
-    <CheckBox fx:id="jspCheckBox" layoutX="150.0" layoutY="450.0" mnemonicParsing="false" text="JSP"/>
+    <CheckBox fx:id="controllerCheckBox" layoutX="50.0" layoutY="450.0" mnemonicParsing="false" text="Controller:"/>
+    <CheckBox fx:id="restCheckBox" layoutX="150.0" layoutY="450.0" mnemonicParsing="false" text="REST"/>
     <CheckBox fx:id="thymeleafCheckBox" layoutX="250.0" layoutY="450.0" mnemonicParsing="false" text="Thymeleaf"/>
-    <CheckBox fx:id="restCheckBox" layoutX="350.0" layoutY="450.0" mnemonicParsing="false" text="REST"/>
+    <CheckBox fx:id="jspCheckBox" layoutX="350.0" layoutY="450.0" mnemonicParsing="false" text="JSP"/>
 
 
     <Button layoutX="1000.0" layoutY="650.0" mnemonicParsing="false" onMouseClicked="#showGeneratedFiles"
