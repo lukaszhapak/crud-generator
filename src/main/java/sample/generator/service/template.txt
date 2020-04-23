@@ -1,7 +1,7 @@
-package $packageName;
+package $packageName.service;
 
-import $packageName.entity.$entityName;
-import $packageName.repository.$entityNameRepository;
+import $packageName.entity.$Entity;
+import $packageName.repository.$EntityRepository;
 import org.springframework.stereotype.Service;
 import lombok.RequiredArgsConstructor;
 
@@ -9,28 +9,28 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @Service
-public class $entityNameService {
+public class $EntityService {
 
-    private final $entityNameRepository $entityLowerCaseRepository;
+    private final $EntityRepository $entityRepository;
 
 
-    public List<$entityName> findAll() {
-        return $entityLowerCaseRepository.findAll();
+    public List<$Entity> findAll() {
+        return $entityRepository.findAll();
     }
 
-    public void save($entityName $entityLowerCase) {
-        $entityLowerCaseRepository.save($entityLowerCase);
+    public $Entity findById(long id) {
+        return $entityRepository.findById(id).orElse(null);
     }
 
-    public void update($entityName $entityLowerCase) {
-        $entityLowerCaseRepository.save($entityLowerCase);
+    public void save($Entity $entity) {
+        $entityRepository.save($entity);
     }
 
-    public $entityName findById(String id) {
-        return $entityLowerCaseRepository.findById(Long.parseLong(id)).orElse(null);
+    public void update($Entity $entity) {
+        $entityRepository.save($entity);
     }
 
-    public void deleteById(String id) {
-        $entityLowerCaseRepository.deleteById(Long.parseLong(id));
+    public void deleteById(long id) {
+        $entityRepository.deleteById(id);
     }
 }

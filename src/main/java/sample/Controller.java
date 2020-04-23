@@ -5,6 +5,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import sample.entity.EntityData;
 import sample.entity.Field;
+import sample.generator.controller.ControllerGenerator;
 import sample.generator.entity.EntityGenerator;
 import sample.generator.repository.RepositoryGenerator;
 import sample.generator.service.ServiceGenerator;
@@ -51,6 +52,7 @@ public class Controller {
     private EntityGenerator entityGenerator;
     private RepositoryGenerator repositoryGenerator;
     private ServiceGenerator serviceGenerator;
+    private ControllerGenerator controllerGenerator;
 
     private HashMap<ChoiceBox<String>, TextField> fieldsInput;
 
@@ -58,6 +60,7 @@ public class Controller {
         entityGenerator = new EntityGenerator();
         repositoryGenerator = new RepositoryGenerator();
         serviceGenerator = new ServiceGenerator();
+        controllerGenerator = new ControllerGenerator();
 
         fieldsInput = new HashMap<>();
         fieldsInput.put(fieldType1, fieldName1);
@@ -90,6 +93,7 @@ public class Controller {
         entityGenerator.generate(entityData);
         repositoryGenerator.generate(entityData);
         serviceGenerator.generate(entityData);
+        controllerGenerator.generate(entityData);
     }
 
     public void showGeneratedFiles() {

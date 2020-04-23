@@ -9,7 +9,7 @@ import lombok.Data;
 
 @Entity
 @Data
-public class $entityName {
+public class $Entity {
 
 $id
 $fields
