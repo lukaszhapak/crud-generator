@@ -9,14 +9,15 @@
 
     <Label layoutX="50.0" layoutY="50.0" text="Entity:"/>
     <TextField fx:id="entityName" layoutX="100.0" layoutY="45.0" promptText="name"/>
-    <CheckBox layoutX="850.0" layoutY="50.0" mnemonicParsing="false" text="Lombok"/>
+    <CheckBox layoutX="850.0" layoutY="50.0" mnemonicParsing="false" selected="true" text="Lombok"/>
 
     <Label layoutX="950.0" layoutY="50.0" text="Package:"/>
     <TextField fx:id="packageName" layoutX="1000.0" layoutY="45.0" promptText="com.example.app"/>
 
     <ScrollPane layoutX="50.0" layoutY="100.0" prefHeight="200.0" prefWidth="1100.0">
         <Pane prefHeight="600.0" prefWidth="1084.0">
-            <CheckBox fx:id="idCheckBox" layoutX="20.0" layoutY="10.0" mnemonicParsing="false" text="Id"/>
+            <CheckBox fx:id="idCheckBox" layoutX="20.0" layoutY="10.0" mnemonicParsing="false" selected="true"
+                      text="Id"/>
 
             <ChoiceBox fx:id="fieldType1" layoutX="20.0" layoutY="50.0" prefWidth="100.0">
                 <items>
@@ -121,12 +122,15 @@
         </Pane>
     </ScrollPane>
 
-    <CheckBox fx:id="repositoryCheckBox" layoutX="50.0" layoutY="350.0" mnemonicParsing="false" text="Repository"/>
+    <CheckBox fx:id="repositoryCheckBox" layoutX="50.0" layoutY="350.0" mnemonicParsing="false" selected="true"
+              text="Repository"/>
 
-    <CheckBox fx:id="serviceCheckBox" layoutX="50.0" layoutY="400.0" mnemonicParsing="false" text="Service"/>
+    <CheckBox fx:id="serviceCheckBox" layoutX="50.0" layoutY="400.0" mnemonicParsing="false" selected="true"
+              text="Service"/>
 
-    <CheckBox fx:id="controllerCheckBox" layoutX="50.0" layoutY="450.0" mnemonicParsing="false" text="Controller:"/>
-    <CheckBox fx:id="restCheckBox" layoutX="150.0" layoutY="450.0" mnemonicParsing="false" text="REST"/>
+    <CheckBox fx:id="controllerCheckBox" layoutX="50.0" layoutY="450.0" mnemonicParsing="false" selected="true"
+              text="Controller:"/>
+    <CheckBox fx:id="restCheckBox" layoutX="150.0" layoutY="450.0" mnemonicParsing="false" selected="true" text="REST"/>
     <CheckBox fx:id="thymeleafCheckBox" layoutX="250.0" layoutY="450.0" mnemonicParsing="false" text="Thymeleaf"/>
     <CheckBox fx:id="jspCheckBox" layoutX="350.0" layoutY="450.0" mnemonicParsing="false" text="JSP"/>
 
