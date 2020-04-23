@@ -28,7 +28,7 @@ public class EntityGenerator {
         StringBuilder fields = new StringBuilder();
 
         for (Field field : entityData.getFields()) {
-            fields.append("    private ").append(field.getType()).append(" ").append(field.getName().toLowerCase()).append(";\n");
+            fields.append("    private ").append(field.getType()).append(" ").append(field.getName()).append(";\n");
         }
 
         data = data.replace("$fields", fields);
