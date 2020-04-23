@@ -15,6 +15,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 public class Controller {
@@ -60,7 +61,7 @@ public class Controller {
         serviceGenerator = new ServiceGenerator();
         controllerGenerator = new ControllerGenerator();
 
-        fieldsInput = new HashMap<>();
+        fieldsInput = new LinkedHashMap<>();
         fieldsInput.put(fieldType1, fieldName1);
         fieldsInput.put(fieldType2, fieldName2);
         fieldsInput.put(fieldType3, fieldName3);
@@ -76,7 +77,7 @@ public class Controller {
     public void generate() {
         EntityData entityData = new EntityData();
         entityData.setPackageName(packageName.getText());
-        entityData.setEntityName(entityName.getText().substring(0, 1).toUpperCase() + entityData.getEntityName().substring(1).toLowerCase());
+        entityData.setEntityName(entityName.getText().substring(0, 1).toUpperCase() + entityName.getText().substring(1).toLowerCase());
 
         entityData.setId(new Field("Long", "id"));
 
