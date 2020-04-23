@@ -13,13 +13,12 @@ public class EntityGenerator {
     }
 
     public void generate(EntityData entityData) {
-        String entityName = entityData.getEntityName().substring(0, 1).toUpperCase() + entityData.getEntityName().substring(1).toLowerCase();
-        String fileName = "entity/" + entityName + ".java";
+        String fileName = "entity/" + entityData.getEntityName() + ".java";
 
         String data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/entity/template.txt");
 
         data = data.replace("$packageName", entityData.getPackageName() + ".entity");
-        data = data.replace("$Entity", entityName);
+        data = data.replace("$Entity", entityData.getEntityName());
 
         String id = "    @Id\n";
         id += "    @GeneratedValue(strategy = GenerationType.IDENTITY)\n";

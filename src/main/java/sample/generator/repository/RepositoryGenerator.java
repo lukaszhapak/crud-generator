@@ -12,13 +12,12 @@ public class RepositoryGenerator {
     }
 
     public void generate(EntityData entityData) {
-        String entityName = entityData.getEntityName().substring(0, 1).toUpperCase() + entityData.getEntityName().substring(1).toLowerCase();
-        String fileName = "repository/" + entityName + "Repository.java";
+        String fileName = "repository/" + entityData.getEntityName() + "Repository.java";
 
         String data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/repository/template.txt");
 
         data = data.replace("$packageName", entityData.getPackageName());
-        data = data.replace("$Entity", entityName);
+        data = data.replace("$Entity", entityData.getEntityName());
 
         data = data.replace("$idType", entityData.getId().getType());
 

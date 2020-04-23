@@ -76,9 +76,9 @@ public class Controller {
     public void generate() {
         EntityData entityData = new EntityData();
         entityData.setPackageName(packageName.getText());
-        entityData.setEntityName(entityName.getText());
+        entityData.setEntityName(entityName.getText().substring(0, 1).toUpperCase() + entityData.getEntityName().substring(1).toLowerCase());
 
-        entityData.setId(new Field("Long", "Id"));
+        entityData.setId(new Field("Long", "id"));
 
         List<Field> fields = new ArrayList<>();
         fieldsInput.forEach((k, v) -> {

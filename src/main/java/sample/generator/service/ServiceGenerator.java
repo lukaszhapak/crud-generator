@@ -13,15 +13,14 @@ public class ServiceGenerator {
     }
 
     public void generate(EntityData entityData) {
-        String entityName = entityData.getEntityName().substring(0, 1).toUpperCase() + entityData.getEntityName().substring(1).toLowerCase();
-        String fileName = "service/" + entityName + "Service.java";
+        String fileName = "service/" + entityData.getEntityName() + "Service.java";
 
         String data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/service/template.txt");
 
         data = data.replace("$packageName", entityData.getPackageName());
-        data = data.replace("$Entity", entityName);
+        data = data.replace("$Entity", entityData.getEntityName());
 
-        data = data.replace("$entity", entityName.toLowerCase());
+        data = data.replace("$entity", entityData.getEntityName().toLowerCase());
 
         fileOperationHelper.saveDataInFile(fileName, data);
     }
