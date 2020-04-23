@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <th:block th:include="fragments/$entity :: header"></th:block>
+</head>
+<body>
+
+<nav th:replace="fragments/$entity :: navbar"></nav>
+
+<br><br>
+
+<div class="container">
+
+<form  method="post" th:object="${$entity}">
+	<div class="form-group">
+$fields
+	</div>
+	<button type="submit" class="btn btn-primary">Add</button>
+</form>
+
+</div>
+
+<br><br>
+
+<div th:replace="fragments/$entity :: scripts"></div>
+
+</body>
+</html>
