@@ -1,0 +1,41 @@
+package $package.controller;
+
+import $package.entity.$Entity;
+import $package.service.$EntityService;
+import lombok.RequiredArgsConstructor;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/$entitys")
+@RequiredArgsConstructor
+public class $EntityController {
+
+    private final $EntityService $entityService;
+
+    @GetMapping
+    public List<$Entity> findAll() {
+        return $entityService.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public $Entity findById(@PathVariable int id) {
+        return $entityService.findById(id);
+    }
+
+    @PostMapping
+    public void save(@RequestBody $Entity $entity) {
+        $entityService.save($entity);
+    }
+
+    @PutMapping
+    public void update(@RequestBody $Entity $entity) {
+        $entityService.update($entity);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable int id) {
+        $entityService.deleteById(id);
+    }
+}
