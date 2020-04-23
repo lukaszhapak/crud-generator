@@ -11,4 +11,5 @@ public class EntityData {
     private String entityName;
     private Field id;
     private List<Field> fields;
+    private String controllerType;
 }

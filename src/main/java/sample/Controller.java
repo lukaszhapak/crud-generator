@@ -87,12 +87,12 @@ public class Controller {
             }
         });
         entityData.setFields(fields);
+        entityData.setControllerType(controllerType.getSelectionModel().getSelectedItem());
 
         entityGenerator.generate(entityData);
         repositoryGenerator.generate(entityData);
         serviceGenerator.generate(entityData);
         controllerGenerator.generate(entityData);
-        System.out.println();
     }
 
     public void showGeneratedFiles() {
