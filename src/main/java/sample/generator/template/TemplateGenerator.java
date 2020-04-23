@@ -14,6 +14,24 @@ public class TemplateGenerator {
 
     public void generate(EntityData entityData) {
         generateList(entityData);
+        generateFragments(entityData);
+    }
+
+    private void generateFragments(EntityData entityData) {
+        String fileName = "templates/fragments/" + entityData.getEntityName().toLowerCase() + ".html";
+        String data = "";
+
+        if (entityData.getControllerType().equals("Thymeleaf")) {
+            data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/template/thymeleaf-fragments.txt");
+        } else {
+            data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/template/jsp-list.txt");
+
+        }
+
+        data = data.replace("$Entity", entityData.getEntityName());
+        data = data.replace("$entity", entityData.getEntityName().toLowerCase());
+
+        fileOperationHelper.saveDataInFile(fileName, data);
     }
 
     private void generateList(EntityData entityData) {
@@ -22,10 +40,8 @@ public class TemplateGenerator {
 
         if (entityData.getControllerType().equals("Thymeleaf")) {
             data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/template/thymeleaf-list.txt");
-
         } else {
             data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/template/jsp-list.txt");
-
         }
 
         data = data.replace("$entity", entityData.getEntityName().toLowerCase());
