@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <th:block th:include="fragments/$entity :: header"></th:block>
+</head>
+<body>
+
+<nav th:replace="fragments/$entity :: navbar"></nav>
+
+<br><br>
+
+<div class="container">
+    <table class="table table-striped">
+$tableRows
+    </table>
+
+	<br><br>
+
+	<a class="btn btn-primary float-right" th:href="@{|/$entity/${$entity.id}/update|}">Update</a>
+
+</div>
+
+<div th:replace="fragments/$entity :: scripts"></div>
+
+</body>
+</html>

@@ -16,6 +16,7 @@ public class TemplateGenerator {
         generateList(entityData);
         generateFragments(entityData);
         generateAdd(entityData);
+        generateDetails(entityData);
     }
 
     private void generateFragments(EntityData entityData) {
@@ -57,6 +58,31 @@ public class TemplateGenerator {
 
         data = data.replace("$tableHeaders", tableHeaders.substring(0, tableHeaders.length() - 1));
         data = data.replace("$tableData", tableData.substring(0, tableData.length() - 1));
+
+        fileOperationHelper.saveDataInFile(fileName, data);
+    }
+
+    private void generateDetails(EntityData entityData) {
+        String fileName = "templates/" + entityData.getEntityName().toLowerCase() + "/" + entityData.getEntityName().toLowerCase() + ".html";
+        String data = "";
+
+        if (entityData.getControllerType().equals("Thymeleaf")) {
+            data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/template/thymeleaf-details.txt");
+        } else {
+            data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/template/jsp-details.txt");
+        }
+
+        data = data.replace("$entity", entityData.getEntityName().toLowerCase());
+
+        StringBuilder tableRows = new StringBuilder();
+
+        for (Field field : entityData.getFields()) {
+            tableRows.append("        <tr>\n" + "            <td>").append(field.getName()).append(":</td>\n")
+                    .append("            <td th:text=\"").append(entityData.getEntityName().toLowerCase()).append(".")
+                    .append(field.getName()).append("\"></td>\n").append("        </tr>\n");
+        }
+
+        data = data.replace("$tableRows", tableRows.substring(0, tableRows.length() - 1));
 
         fileOperationHelper.saveDataInFile(fileName, data);
     }
