@@ -28,7 +28,6 @@ public class TemplateGenerator {
             data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/template/thymeleaf-fragments.txt");
         } else {
             data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/template/jsp-list.txt");
-
         }
 
         data = data.replace("$Entity", entityData.getEntityName());
