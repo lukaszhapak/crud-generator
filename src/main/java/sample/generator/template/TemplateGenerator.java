@@ -17,6 +17,7 @@ public class TemplateGenerator {
         generateFragments(entityData);
         generateAdd(entityData);
         generateDetails(entityData);
+        generateUpdate(entityData);
     }
 
     private void generateFragments(EntityData entityData) {
@@ -104,6 +105,32 @@ public class TemplateGenerator {
         for (Field field : entityData.getFields()) {
             fields.append("        <label for=").append(field.getName()).append(">").append(field.getName()).append(":</label>\n");
             fields.append("        <input type=\"text\" class=\"form-control\" id=").append(field.getName()).append("  th:field=\"*{").append(field.getName()).append("}\">\n");
+        }
+
+        data = data.replace("$fields", fields.substring(0, fields.length() - 1));
+
+        fileOperationHelper.saveDataInFile(fileName, data);
+    }
+
+    private void generateUpdate(EntityData entityData) {
+        String fileName = "templates/" + entityData.getEntityName().toLowerCase() + "/update.html";
+        String data = "";
+
+        if (entityData.getControllerType().equals("Thymeleaf")) {
+            data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/template/thymeleaf-update.txt");
+        } else {
+            data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/template/jsp-update.txt");
+        }
+
+        data = data.replace("$entity", entityData.getEntityName().toLowerCase());
+
+        StringBuilder fields = new StringBuilder();
+
+        for (Field field : entityData.getFields()) {
+            fields.append("    <tr>\n");
+            fields.append("        <td><label for=\"").append(field.getName()).append("\">").append(field.getName()).append(":</label></td>\n");
+            fields.append("        <td><input type=\"text\" class=\"form-control\" id=\"").append(field.getName()).append("\"  th:field=\"*{").append(field.getName()).append("}\"></td>\n");
+            fields.append("    </tr>\n");
         }
 
         data = data.replace("$fields", fields.substring(0, fields.length() - 1));
