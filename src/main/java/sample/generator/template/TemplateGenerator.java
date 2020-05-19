@@ -78,8 +78,8 @@ public class TemplateGenerator {
 
         for (Field field : entityData.getFields()) {
             tableRows.append("        <tr>\n" + "            <td>").append(field.getName()).append(":</td>\n")
-                    .append("            <td th:text=\"").append(entityData.getEntityName().toLowerCase()).append(".")
-                    .append(field.getName()).append("\"></td>\n").append("        </tr>\n");
+                    .append("            <td th:text=\"${").append(entityData.getEntityName().toLowerCase()).append(".")
+                    .append(field.getName()).append("}\"></td>\n").append("        </tr>\n");
         }
 
         data = data.replace("$tableRows", tableRows.substring(0, tableRows.length() - 1));
