@@ -1,4 +1,4 @@
-package sample.generator.template;
+package sample.generator.view;
 
 import sample.entity.EntityData;
 import sample.entity.Field;

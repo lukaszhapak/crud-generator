@@ -2,7 +2,7 @@ package sample.generator.controller;
 
 import sample.entity.EntityData;
 import sample.file.FileOperationHelper;
-import sample.generator.template.TemplateGenerator;
+import sample.generator.view.TemplateGenerator;
 
 public class ControllerGenerator {
 
