@@ -25,9 +25,9 @@ public class ViewGenerator {
         String data = "";
 
         if (entityData.getControllerType().equals("Thymeleaf")) {
-            data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/template/thymeleaf-fragments.txt");
+            data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/view/thymeleaf-fragments.txt");
         } else {
-            data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/template/jsp-list.txt");
+            data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/view/jsp-list.txt");
         }
 
         data = data.replace("$Entity", entityData.getEntityName());
@@ -41,9 +41,9 @@ public class ViewGenerator {
         String data = "";
 
         if (entityData.getControllerType().equals("Thymeleaf")) {
-            data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/template/thymeleaf-list.txt");
+            data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/view/thymeleaf-list.txt");
         } else {
-            data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/template/jsp-list.txt");
+            data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/view/jsp-list.txt");
         }
 
         data = data.replace("$entity", entityData.getEntityName().toLowerCase());
@@ -67,9 +67,9 @@ public class ViewGenerator {
         String data = "";
 
         if (entityData.getControllerType().equals("Thymeleaf")) {
-            data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/template/thymeleaf-details.txt");
+            data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/view/thymeleaf-details.txt");
         } else {
-            data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/template/jsp-details.txt");
+            data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/view/jsp-details.txt");
         }
 
         data = data.replace("$entity", entityData.getEntityName().toLowerCase());
@@ -92,9 +92,9 @@ public class ViewGenerator {
         String data = "";
 
         if (entityData.getControllerType().equals("Thymeleaf")) {
-            data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/template/thymeleaf-add.txt");
+            data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/view/thymeleaf-add.txt");
         } else {
-            data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/template/jsp-add.txt");
+            data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/view/jsp-add.txt");
         }
 
         data = data.replace("$entity", entityData.getEntityName().toLowerCase());
@@ -116,9 +116,9 @@ public class ViewGenerator {
         String data = "";
 
         if (entityData.getControllerType().equals("Thymeleaf")) {
-            data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/template/thymeleaf-update.txt");
+            data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/view/thymeleaf-update.txt");
         } else {
-            data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/template/jsp-update.txt");
+            data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/view/jsp-update.txt");
         }
 
         data = data.replace("$entity", entityData.getEntityName().toLowerCase());
