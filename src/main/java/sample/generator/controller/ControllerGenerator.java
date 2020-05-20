@@ -2,17 +2,17 @@ package sample.generator.controller;
 
 import sample.entity.EntityData;
 import sample.file.FileOperationHelper;
-import sample.generator.view.TemplateGenerator;
+import sample.generator.view.ViewGenerator;
 
 public class ControllerGenerator {
 
 
     private FileOperationHelper fileOperationHelper;
-    private TemplateGenerator templateGenerator;
+    private ViewGenerator viewGenerator;
 
     public ControllerGenerator() {
         fileOperationHelper = new FileOperationHelper();
-        templateGenerator = new TemplateGenerator();
+        viewGenerator = new ViewGenerator();
     }
 
     public void generate(EntityData entityData) {
@@ -23,10 +23,10 @@ public class ControllerGenerator {
             data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/controller/rest-template.txt");
         } else if (entityData.getControllerType().equals("Thymeleaf")) {
             data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/controller/thymeleaf-template.txt");
-            templateGenerator.generate(entityData);
+            viewGenerator.generate(entityData);
         } else {
             data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/controller/jsp-template.txt");
-            templateGenerator.generate(entityData);
+            viewGenerator.generate(entityData);
         }
 
         data = data.replace("$package", entityData.getPackageName());

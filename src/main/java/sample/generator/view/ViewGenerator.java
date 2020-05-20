@@ -4,11 +4,11 @@ import sample.entity.EntityData;
 import sample.entity.Field;
 import sample.file.FileOperationHelper;
 
-public class TemplateGenerator {
+public class ViewGenerator {
 
     private FileOperationHelper fileOperationHelper;
 
-    public TemplateGenerator() {
+    public ViewGenerator() {
         fileOperationHelper = new FileOperationHelper();
     }
 
