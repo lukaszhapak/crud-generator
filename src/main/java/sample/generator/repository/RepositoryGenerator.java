@@ -14,7 +14,7 @@ public class RepositoryGenerator {
     public void generate(EntityData entityData) {
         String fileName = "repository/" + entityData.getEntityName() + "Repository.java";
 
-        String data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/repository/template.txt");
+        String data = fileOperationHelper.getDataFromFile("/repository/template.txt");
 
         data = data.replace("$packageName", entityData.getPackageName());
         data = data.replace("$Entity", entityData.getEntityName());

@@ -15,7 +15,7 @@ public class ServiceGenerator {
     public void generate(EntityData entityData) {
         String fileName = "service/" + entityData.getEntityName() + "Service.java";
 
-        String data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/service/template.txt");
+        String data = fileOperationHelper.getDataFromFile("/service/template.txt");
 
         data = data.replace("$packageName", entityData.getPackageName());
         data = data.replace("$Entity", entityData.getEntityName());

@@ -15,7 +15,7 @@ public class EntityGenerator {
     public void generate(EntityData entityData) {
         String fileName = "entity/" + entityData.getEntityName() + ".java";
 
-        String data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/entity/template.txt");
+        String data = fileOperationHelper.getDataFromFile("/entity/template.txt");
 
         data = data.replace("$packageName", entityData.getPackageName() + ".entity");
         data = data.replace("$Entity", entityData.getEntityName());

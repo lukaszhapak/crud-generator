@@ -20,12 +20,9 @@ public class ControllerGenerator {
         String data = "";
 
         if (entityData.getControllerType().equals("Rest")) {
-            data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/controller/rest-template.txt");
+            data = fileOperationHelper.getDataFromFile("/controller/rest-template.txt");
         } else if (entityData.getControllerType().equals("Thymeleaf")) {
-            data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/controller/thymeleaf-template.txt");
-            viewGenerator.generate(entityData);
-        } else {
-            data = fileOperationHelper.getDataFromFile("./src/main/java/sample/generator/controller/jsp-template.txt");
+            data = fileOperationHelper.getDataFromFile("/controller/thymeleaf-template.txt");
             viewGenerator.generate(entityData);
         }
 

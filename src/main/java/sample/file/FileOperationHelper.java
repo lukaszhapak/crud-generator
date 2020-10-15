@@ -1,23 +1,20 @@
 package sample.file;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.PrintWriter;
-import java.util.Scanner;
+import java.io.*;
 
 public class FileOperationHelper {
 
     public String getDataFromFile(String fileName) {
         StringBuilder result = new StringBuilder();
-
         try {
-            Scanner file = new Scanner(new File(fileName));
-            while (file.hasNextLine()) {
-                result.append(file.nextLine()).append("\n");
+            InputStream in = getClass().getResourceAsStream(fileName);
+            BufferedReader reader = new BufferedReader(new InputStreamReader(in));
+            String line;
+            while ((line = reader.readLine()) != null) {
+                result.append(line).append("\n");
             }
-            file.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
 
         return result.toString();
