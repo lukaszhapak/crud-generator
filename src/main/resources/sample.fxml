@@ -15,7 +15,7 @@
     <TextField fx:id="packageName" layoutX="1000.0" layoutY="45.0" promptText="com.example.app"/>
 
     <ScrollPane layoutX="50.0" layoutY="100.0" prefHeight="200.0" prefWidth="1100.0">
-        <Pane prefHeight="600.0" prefWidth="1084.0">
+        <Pane prefHeight="380.0" prefWidth="400.0">
             <CheckBox fx:id="idCheckBox" disable="true" layoutX="20.0" layoutY="10.0" mnemonicParsing="false"
                       selected="true" text="Id"/>
 
