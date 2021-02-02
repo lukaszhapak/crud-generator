@@ -8,17 +8,14 @@
 
 <nav th:replace="fragments/$entity :: navbar"></nav>
 
-<br><br>
-
-<div class="container">
+<div class="container my-5">
 
 
 <form  method="post" th:object="${$entity}">
-    <table class="table table-striped">
+    <table class="table table-striped mb-5">
 $fields
 	</table>
 
-	<br><br>
 	<div class="float-right">
 		<a class="btn btn-danger" th:href="@{|/$entity/${$entity.id}}">Cancel</a>
 		<button type="submit" class="btn btn-primary">Update</button>

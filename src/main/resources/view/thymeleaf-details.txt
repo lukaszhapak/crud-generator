@@ -8,14 +8,10 @@
 
 <nav th:replace="fragments/$entity :: navbar"></nav>
 
-<br><br>
-
-<div class="container">
-    <table class="table table-striped">
+<div class="container my-5">
+    <table class="table table-striped mb-5">
 $tableRows
     </table>
-
-	<br><br>
 
 	<a class="btn btn-primary float-right" th:href="@{|/$entity/${$entity.id}/update|}">Update</a>
 
