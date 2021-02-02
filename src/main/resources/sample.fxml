@@ -4,8 +4,8 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.Pane?>
 <?import java.lang.*?>
-<Pane xmlns:fx="http://javafx.com/fxml/1" prefHeight="700" prefWidth="1200"
-      xmlns="http://javafx.com/javafx/10.0.2-internal" fx:controller="sample.Controller">
+<Pane xmlns:fx="http://javafx.com/fxml/1" prefHeight="700" prefWidth="1200" xmlns="http://javafx.com/javafx/11.0.1"
+      fx:controller="sample.Controller">
 
     <Label layoutX="50.0" layoutY="50.0" text="Entity:"/>
     <TextField fx:id="entityName" layoutX="100.0" layoutY="45.0" promptText="name"/>
@@ -142,5 +142,6 @@
     <Button layoutX="1000.0" layoutY="650.0" mnemonicParsing="false" onMouseClicked="#showGeneratedFiles"
             text="Show Files"/>
     <Button layoutX="1100.0" layoutY="650.0" mnemonicParsing="false" onMouseClicked="#generate" text="Generate"/>
+    <Button layoutX="900.0" layoutY="650.0" minWidth="70" mnemonicParsing="false" onMouseClicked="#clear" text="Clear"/>
 
 </Pane>

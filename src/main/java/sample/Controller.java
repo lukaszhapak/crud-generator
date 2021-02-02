@@ -103,4 +103,15 @@ public class Controller {
             e.printStackTrace();
         }
     }
+
+    public void clear() {
+        packageName.setText("");
+        entityName.setText("");
+        fieldsInput.forEach((k, v) -> {
+            if (k.getValue() != null) {
+                v.setText("");
+                k.setValue(null);
+            }
+        });
+    }
 }
